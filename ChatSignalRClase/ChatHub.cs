@@ -5,7 +5,7 @@ namespace ChatSignalRClase
     public class ChatHub : Hub
     {
 
-        public async Task SenMessage(int room, string user, string message)
+        public async Task SendMessage(int room, string user, string message)
         {
             //Enviamos un mensaje de forma asincorna a un grupo determinado
             await Clients.Group(room.ToString()).SendAsync("RecibirMensaje", user, message);
